@@ -1,0 +1,4 @@
+Database container started
+Connection established
+Memory usage exceeded limit
+Database connection refused

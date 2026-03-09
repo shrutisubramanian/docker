@@ -1,0 +1,5 @@
+Application started
+User login request received
+Request processed successfully
+Connection refused to database
+Application timeout while processing request

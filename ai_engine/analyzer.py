@@ -6,7 +6,7 @@ with open("ai_engine/model/model.pkl", "rb") as f:
     model, vectorizer = pickle.load(f)
 
 # Read logs
-with open("data/logs.txt") as f:
+with open("data/logs_api.txt") as f:
     logs = f.read()
 
 # Convert logs into vector
