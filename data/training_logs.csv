@@ -1,0 +1,16 @@
+log_message,label
+Exception occurred in application,crash
+Runtime error detected,crash
+Permission denied accessing file,permission
+Connection refused to database,dependency
+Out of memory error,memory
+Docker build failed,build
+Image build error,build
+Application timed out,timeout
+Container killed due to memory,memory
+Docker build failed due to missing dependency,build
+Killed process due to memory exhaustion,memory
+Connection refused to database,dependency
+Permission denied writing file,permission
+Runtime exception occurred,crash
+Docker build failed due to missing dependency,build
