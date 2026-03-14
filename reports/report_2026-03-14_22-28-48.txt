@@ -1,0 +1,33 @@
+============================================================
+  AI CONTAINER MONITORING REPORT
+  Generated: 2026-03-14 22:28:48
+============================================================
+
+Total logs scanned : 8
+Normal logs        : 6
+Anomalies detected : 2
+Avg SVM confidence : 88.5%
+
+Error breakdown:
+  build: 1
+  memory: 1
+
+------------------------------------------------------------
+DETAILED FINDINGS
+------------------------------------------------------------
+
+[1] Container : app
+    Log       : Docker build failed due to missing dependency
+    Error     : build (confidence: 83.1%)
+    Cause     : Missing dependency during build
+    Fix       : Rebuild image and verify all dependencies in requirements.txt
+
+[2] Container : db
+    Log       : Container exited with code 137 out of memory
+    Error     : memory (confidence: 93.9%)
+    Cause     : Memory exhaustion in container
+    Fix       : Increase container memory limit (e.g. --memory=512m)
+
+============================================================
+END OF REPORT
+============================================================

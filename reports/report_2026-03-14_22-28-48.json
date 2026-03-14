@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-03-14T22:28:48.837306",
+  "summary": {
+    "total_anomalies": 2,
+    "avg_confidence": 88.5,
+    "error_breakdown": {
+      "build": 1,
+      "memory": 1
+    },
+    "total": 8,
+    "normal": 6
+  },
+  "anomalies": [
+    {
+      "container": "app",
+      "original_log": "Docker build failed due to missing dependency",
+      "error_type": "build",
+      "confidence": 83.1,
+      "root_cause": "Missing dependency during build",
+      "fix": "Rebuild image and verify all dependencies in requirements.txt"
+    },
+    {
+      "container": "db",
+      "original_log": "Container exited with code 137 out of memory",
+      "error_type": "memory",
+      "confidence": 93.9,
+      "root_cause": "Memory exhaustion in container",
+      "fix": "Increase container memory limit (e.g. --memory=512m)"
+    }
+  ]
+}
