@@ -1,0 +1,282 @@
+[
+    {
+        "timestamp": "2026-03-16T00:44:58.356468",
+        "container": "frontend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:32:58.441891",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:18:01.104258",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:15:49.213725",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "INCREASE_TIMEOUT",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:15:12.857318",
+        "container": "frontend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:14:59.765134",
+        "container": "frontend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "APPLY_CPU_QUOTA",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:14:10.303856",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:13:46.263812",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-15 23:32:44",
+        "container": "mongo",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:32:25",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:31:50",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:31:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:30:56",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:30:17",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:17:55",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:17:31",
+        "container": "backend",
+        "error_type": "dependency",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:17:00",
+        "container": "backend",
+        "error_type": "dependency",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:16:32",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:15:20",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:20",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:20",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:18",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 22:59:54",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 22:59:20",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 22:55:42",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 22:55:01",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 22:50:16",
+        "container": "mongo",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 22:49:36",
+        "container": "mongo",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15T16:59:19.693019",
+        "container": "frontend",
+        "error_type": "Memory Out Of Bounds (OOM)",
+        "suggested_fix": "Clear cache, increase memory allocation, and restart",
+        "action_taken": "Flush Memory & Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15T16:59:51.688761",
+        "container": "frontend",
+        "error_type": "Memory Out Of Bounds (OOM)",
+        "suggested_fix": "Clear cache, increase memory allocation, and restart",
+        "action_taken": "Flush Memory & Restart",
+        "resolution_status": "Success"
+    }
+]

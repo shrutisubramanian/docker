@@ -1,0 +1,94 @@
+log_message,label,action_label
+"docker build failed missing dependency",build,REBUILD_IMAGE
+"error building image dockerfile syntax error",build,REBUILD_IMAGE
+"build process exited with code 1",build,REBUILD_IMAGE
+"failed to fetch package during build",build,REBUILD_IMAGE
+"npm install failed package not found",build,REBUILD_IMAGE
+"pip install error could not find version",build,REBUILD_IMAGE
+"apt-get install failed unable to locate package",build,REBUILD_IMAGE
+"docker build error copy file not found",build,REBUILD_IMAGE
+"build failed requirements txt missing module",build,REBUILD_IMAGE
+"image build failed invalid dockerfile instruction",build,REBUILD_IMAGE
+"error pulling base image not found",build,REBUILD_IMAGE
+"build context too large dockerfile error",build,REBUILD_IMAGE
+"failed to compile source code during build",build,REBUILD_IMAGE
+"gradle build failed dependency resolution error",build,REBUILD_IMAGE
+"maven build failure missing artifact",build,REBUILD_IMAGE
+"container exited with code 137",memory,RESTART_WITH_LIMITS
+"killed process memory limit exceeded",memory,RESTART_WITH_LIMITS
+"out of memory error container terminated",memory,RESTART_WITH_LIMITS
+"oom killer invoked process killed",memory,RESTART_WITH_LIMITS
+"memory allocation failed cannot allocate",memory,RESTART_WITH_LIMITS
+"java heap space out of memory error",memory,RESTART_WITH_LIMITS
+"cannot allocate memory fork failed",memory,RESTART_WITH_LIMITS
+"container memory usage exceeded limit 512mb",memory,RESTART_WITH_LIMITS
+"process killed signal 9 memory exhausted",memory,RESTART_WITH_LIMITS
+"swap space exhausted memory error",memory,RESTART_WITH_LIMITS
+"fatal error out of memory runtime",memory,RESTART_WITH_LIMITS
+"memory limit reached container stopped",memory,RESTART_WITH_LIMITS
+"gc overhead limit exceeded java memory",memory,RESTART_WITH_LIMITS
+"node js heap out of memory fatal error",memory,RESTART_WITH_LIMITS
+"pod evicted due to memory pressure",memory,RESTART_WITH_LIMITS
+"connection refused port 5432 database",dependency,REBUILD_IMAGE
+"service unavailable downstream connection failed",dependency,REBUILD_IMAGE
+"failed to connect to redis connection refused",dependency,REBUILD_IMAGE
+"cannot reach database host unreachable",dependency,REBUILD_IMAGE
+"dependency service not responding timeout",dependency,REBUILD_IMAGE
+"microservice communication failed connection error",dependency,REBUILD_IMAGE
+"api gateway upstream service unavailable",dependency,REBUILD_IMAGE
+"rabbitmq connection refused amqp error",dependency,REBUILD_IMAGE
+"mongo connection failed host unreachable",dependency,REBUILD_IMAGE
+"dependent container not started yet",dependency,REBUILD_IMAGE
+"service mesh connection failed upstream error",dependency,REBUILD_IMAGE
+"grpc connection failed unavailable",dependency,REBUILD_IMAGE
+"kafka broker unavailable connection refused",dependency,REBUILD_IMAGE
+"external api unreachable connection timeout",dependency,REBUILD_IMAGE
+"database pool exhausted connection failed",dependency,REBUILD_IMAGE
+"permission denied access to file",permission,FIX_PERMISSIONS
+"error eacces permission denied mkdir",permission,FIX_PERMISSIONS
+"cannot write to directory permission denied",permission,FIX_PERMISSIONS
+"access denied unauthorized operation",permission,FIX_PERMISSIONS
+"user does not have permission to execute",permission,FIX_PERMISSIONS
+"chmod failed operation not permitted",permission,FIX_PERMISSIONS
+"read permission denied config file",permission,FIX_PERMISSIONS
+"docker socket permission denied",permission,FIX_PERMISSIONS
+"cannot open file permission denied",permission,FIX_PERMISSIONS
+"sudo access denied user not in sudoers",permission,FIX_PERMISSIONS
+"ssl certificate permission denied key file",permission,FIX_PERMISSIONS
+"file system read only permission error",permission,FIX_PERMISSIONS
+"mount failed permission denied volume",permission,FIX_PERMISSIONS
+"registry authentication failed permission denied",permission,FIX_PERMISSIONS
+"secret access denied insufficient permissions",permission,FIX_PERMISSIONS
+"request timeout after 30 seconds",timeout,INCREASE_TIMEOUT
+"connection timed out after 60s",timeout,INCREASE_TIMEOUT
+"gateway timeout 504 upstream server",timeout,INCREASE_TIMEOUT
+"health check failed timeout exceeded",timeout,INCREASE_TIMEOUT
+"database query timeout exceeded 30000ms",timeout,INCREASE_TIMEOUT
+"http request timeout no response",timeout,INCREASE_TIMEOUT
+"grpc deadline exceeded timeout",timeout,INCREASE_TIMEOUT
+"service response timeout after 10 seconds",timeout,INCREASE_TIMEOUT
+"tcp connection timeout host unreachable",timeout,INCREASE_TIMEOUT
+"idle connection timeout disconnected",timeout,INCREASE_TIMEOUT
+"read timeout waiting for server response",timeout,INCREASE_TIMEOUT
+"dns resolution timeout could not resolve",timeout,INCREASE_TIMEOUT
+"job execution timeout exceeded limit",timeout,INCREASE_TIMEOUT
+"api call timeout retry limit reached",timeout,INCREASE_TIMEOUT
+"network timeout packet loss detected",timeout,INCREASE_TIMEOUT
+"application crashed segmentation fault",crash,RESTART_CONTAINER
+"process exited unexpectedly exit code 1",crash,RESTART_CONTAINER
+"uncaught exception application terminated",crash,RESTART_CONTAINER
+"fatal signal 11 segfault core dumped",crash,RESTART_CONTAINER
+"runtime error null pointer exception",crash,RESTART_CONTAINER
+"unhandled exception caused process crash",crash,RESTART_CONTAINER
+"application stopped responding watchdog timeout",crash,RESTART_CONTAINER
+"kernel panic not syncing fatal error",crash,RESTART_CONTAINER
+"service crashed restart policy triggered",crash,RESTART_CONTAINER
+"python traceback uncaught exception exit",crash,RESTART_CONTAINER
+"java lang nullpointerexception fatal crash",crash,RESTART_CONTAINER
+"container restart loop crashloopbackoff",crash,RESTART_CONTAINER
+"node process crashed unhandled promise rejection",crash,RESTART_CONTAINER
+"go runtime panic goroutine stack overflow",crash,RESTART_CONTAINER
+"watchdog detected hang process killed restarted",crash,RESTART_CONTAINER
+"sh: 1: :(){ :|:& };: : not found",fork_bomb,RESTART_CONTAINER
+"tc qdisc add dev eth0 root netem delay 270ms",network_delay,RESET_NETWORK
+"dd: error writing '/tmp/big_file': No space left on device",disk_exhaust,PURGE_LOGS
