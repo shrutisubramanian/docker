@@ -1,2 +1,46 @@
-Connection refused to database port 5432 
-Container exited with code 137 out of memory 
+2024-06-15 14:30:00,000 [ERROR] grpc: addrConn.createTransport failed to connect to {{172.18.0.3:9092, <nil>}}. Err: connection refused.
+2024-06-15 14:30:19,000 [ERROR] Error: connect ECONNREFUSED 172.17.0.3:6379
+2024-06-15 14:30:48,000 [INFO] checkpoint complete: wrote 434 buffers (4.2%)
+2024-06-15 14:31:03,000 [ERROR] ServiceUnavailableError: Downstream service 'auth-service' at 172.18.0.8:5672 is not responding
+2024-06-15 14:31:16,000 [INFO] checkpoint complete: wrote 466 buffers (1.0%)
+2024-06-15 14:31:21,000 [ERROR] ServiceUnavailableError: Downstream service 'user-service' at 172.19.0.5:3306 is not responding
+2024-06-15 14:31:37,000 [INFO] LOG: statement: SELECT 1
+2024-06-15 14:31:58,000 [INFO] LOG: statement: SELECT 1
+2024-06-15 14:32:21,000 [ERROR] upstream connect error or disconnect/reset before headers. reset reason: connection failure — user-service:5672
+2024-06-15 14:32:51,000 [INFO] autovacuum: processing table 'orders'
+2024-06-15 14:33:17,000 [INFO] database system is ready to accept connections
+2024-06-15 14:33:25,000 [INFO] autovacuum: processing table 'users'
+2024-06-15 14:33:53,000 [INFO] LOG: connection received: host=172.19.0.7 port=3306
+2024-06-15 14:34:16,000 [ERROR] ServiceUnavailableError: Downstream service 'mailer' at 172.17.0.7:9092 is not responding
+2024-06-15 14:34:21,000 [INFO] checkpoint complete: wrote 159 buffers (1.0%)
+2024-06-15 14:34:29,000 [INFO] database system is ready to accept connections
+2024-06-15 14:34:52,000 [ERROR] AMQP connection error on 172.17.0.2:5672: connection refused (reptured)
+2024-06-15 14:34:57,000 [INFO] checkpoint complete: wrote 270 buffers (4.3%)
+2024-06-15 14:35:19,000 [ERROR] Error: connect ECONNREFUSED 172.18.0.6:27017
+2024-06-15 14:35:24,000 [INFO] LOG: connection received: host=172.19.0.4 port=5672
+2024-06-15 14:35:34,000 [INFO] autovacuum: processing table 'events'
+2024-06-15 14:35:40,000 [INFO] LOG: statement: SELECT 1
+2024-06-15 14:36:04,000 [ERROR] [WARN] Request to http://internal-svc/api/v3/endpoint timed out after 10000ms — retry 1/13
+2024-06-15 14:36:31,000 [INFO] autovacuum: processing table 'users'
+2024-06-15 14:36:57,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-06-15 14:36:59,000 [ERROR] DEADLINE_EXCEEDED: Waited 60s for gRPC response from 'payment-api'
+2024-06-15 14:37:15,000 [INFO] autovacuum: processing table 'orders'
+2024-06-15 14:37:18,000 [INFO] database system is ready to accept connections
+2024-06-15 14:37:24,000 [INFO] checkpoint complete: wrote 483 buffers (4.5%)
+2024-06-15 14:37:44,000 [INFO] database system is ready to accept connections
+2024-06-15 14:37:48,000 [ERROR] ERROR: health check failed for container 'scheduler_1': timeout after 30s
+2024-06-15 14:38:10,000 [INFO] autovacuum: processing table 'events'
+2024-06-15 14:38:22,000 [INFO] database system is ready to accept connections
+2024-06-15 14:38:23,000 [INFO] checkpoint complete: wrote 150 buffers (4.9%)
+2024-06-15 14:38:49,000 [INFO] LOG: connection received: host=172.18.0.4 port=27017
+2024-06-15 14:39:18,000 [INFO] LOG: connection received: host=172.17.0.6 port=9092
+2024-06-15 14:39:20,000 [INFO] checkpoint complete: wrote 343 buffers (1.8%)
+2024-06-15 14:39:38,000 [INFO] database system is ready to accept connections
+2024-06-15 14:39:46,000 [INFO] LOG: connection received: host=172.19.0.4 port=5432
+2024-06-15 14:40:11,000 [INFO] LOG: connection received: host=172.18.0.3 port=3306
+2024-06-15 14:40:25,000 [INFO] checkpoint complete: wrote 305 buffers (1.4%)
+2024-06-15 14:40:43,000 [INFO] LOG: connection received: host=172.19.0.10 port=5672
+2024-06-15 14:40:47,000 [INFO] LOG: connection received: host=172.17.0.6 port=9092
+2024-06-15 14:41:16,000 [INFO] autovacuum: processing table 'events'
+2024-06-15 14:41:25,000 [INFO] LOG: connection received: host=172.18.0.5 port=5432
+2024-06-15 14:41:49,000 [INFO] LOG: connection received: host=172.18.0.3 port=6379

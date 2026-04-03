@@ -1,3 +1,64 @@
-Permission denied accessing configuration file 
-Service timeout after 30 seconds 
-Application running normally 
+2024-06-15 14:30:00,000 [ERROR] ReadTimeoutError: HTTPSConnectionPool(host='smtp.mailgun.org', port=5672): Read timed out. (read timeout=60)
+2024-06-15 14:30:09,000 [INFO] Response cached for route /api/v1/users
+2024-06-15 14:30:33,000 [ERROR] Gateway Timeout: upstream 'auth-service' failed to respond within 60s
+2024-06-15 14:31:03,000 [INFO] Upstream latency p99: 15ms
+2024-06-15 14:31:31,000 [INFO] Rate limiter: 250 requests/min from 172.17.0.6
+2024-06-15 14:31:52,000 [ERROR] TimeoutError: Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? (10000ms)
+2024-06-15 14:32:14,000 [INFO] Upstream latency p99: 373ms
+2024-06-15 14:32:22,000 [INFO] Response cached for route /api/v1/users
+2024-06-15 14:32:52,000 [ERROR] net/http: request canceled (Client.Timeout exceeded while awaiting headers) [http://internal-svc/api/v2/endpoint]
+2024-06-15 14:33:20,000 [ERROR] net/http: request canceled (Client.Timeout exceeded while awaiting headers) [http://internal-svc/api/v2/endpoint]
+2024-06-15 14:33:28,000 [ERROR] redis.exceptions.ConnectionError: Error 107 connecting to 172.17.0.10:6379. Connection refused.
+2024-06-15 14:33:46,000 [INFO] Response cached for route /api/v1/users
+2024-06-15 14:34:02,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:34:20,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:34:47,000 [ERROR] pymongo.errors.ServerSelectionTimeoutError: 172.18.0.7:9092: [Errno 111] Connection refused, Timeout: 30s
+2024-06-15 14:35:12,000 [INFO] Response cached for route /api/v1/users
+2024-06-15 14:35:24,000 [INFO] JWT token validated for sub=9973
+2024-06-15 14:35:29,000 [INFO] Response cached for route /api/v1/orders
+2024-06-15 14:35:44,000 [INFO] Rate limiter: 388 requests/min from 172.19.0.10
+2024-06-15 14:35:49,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:36:19,000 [INFO] Rate limiter: 418 requests/min from 172.19.0.7
+2024-06-15 14:36:36,000 [INFO] Response cached for route /api/v1/orders
+2024-06-15 14:36:41,000 [ERROR] ServiceUnavailableError: Downstream service 'mailer' at 172.19.0.10:27017 is not responding
+2024-06-15 14:37:09,000 [INFO] JWT token validated for sub=4560
+2024-06-15 14:37:39,000 [INFO] Rate limiter: 278 requests/min from 172.18.0.10
+2024-06-15 14:37:55,000 [INFO] Upstream latency p99: 414ms
+2024-06-15 14:37:56,000 [INFO] Upstream latency p99: 137ms
+2024-06-15 14:38:21,000 [INFO] Rate limiter: 129 requests/min from 172.18.0.5
+2024-06-15 14:38:46,000 [INFO] Upstream latency p99: 332ms
+2024-06-15 14:39:04,000 [INFO] Response cached for route /api/v1/products
+2024-06-15 14:39:06,000 [INFO] Response cached for route /api/v1/products
+2024-06-15 14:39:07,000 [INFO] JWT token validated for sub=4327
+2024-06-15 14:39:28,000 [INFO] JWT token validated for sub=9955
+2024-06-15 14:39:34,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:39:43,000 [INFO] Upstream latency p99: 170ms
+2024-06-15 14:39:58,000 [INFO] Rate limiter: 476 requests/min from 172.19.0.6
+2024-06-15 14:40:14,000 [INFO] Upstream latency p99: 267ms
+2024-06-15 14:40:17,000 [INFO] Upstream latency p99: 114ms
+2024-06-15 14:40:46,000 [INFO] Rate limiter: 185 requests/min from 172.19.0.2
+2024-06-15 14:40:50,000 [INFO] JWT token validated for sub=8301
+2024-06-15 14:41:19,000 [INFO] JWT token validated for sub=7248
+2024-06-15 14:41:43,000 [INFO] JWT token validated for sub=1404
+2024-06-15 14:42:00,000 [INFO] Response cached for route /api/v1/orders
+2024-06-15 14:42:03,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:42:24,000 [INFO] Rate limiter: 54 requests/min from 172.17.0.4
+2024-06-15 14:42:25,000 [INFO] Response cached for route /api/v1/orders
+2024-06-15 14:42:28,000 [INFO] Upstream latency p99: 208ms
+2024-06-15 14:42:42,000 [INFO] JWT token validated for sub=1276
+2024-06-15 14:43:02,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:43:24,000 [INFO] JWT token validated for sub=2417
+2024-06-15 14:43:46,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:44:07,000 [INFO] Rate limiter: 455 requests/min from 172.19.0.4
+2024-06-15 14:44:11,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:44:35,000 [INFO] JWT token validated for sub=4469
+2024-06-15 14:44:43,000 [INFO] Upstream latency p99: 237ms
+2024-06-15 14:45:04,000 [INFO] Upstream latency p99: 372ms
+2024-06-15 14:45:23,000 [INFO] Response cached for route /api/v1/users
+2024-06-15 14:45:43,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:45:48,000 [INFO] Upstream latency p99: 161ms
+2024-06-15 14:45:56,000 [INFO] Rate limiter: 431 requests/min from 172.18.0.7
+2024-06-15 14:46:21,000 [INFO] JWT token validated for sub=8978
+2024-06-15 14:46:48,000 [INFO] Rate limiter: 135 requests/min from 172.17.0.10
+2024-06-15 14:47:09,000 [INFO] Health check passed — all services reachable
+2024-06-15 14:47:27,000 [INFO] Upstream latency p99: 457ms

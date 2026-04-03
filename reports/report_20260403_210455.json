@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-04-03T21:04:55.974379",
+  "summary": {
+    "total": 120,
+    "normal": 90,
+    "anomalies": 30
+  },
+  "root_cause": {
+    "root_cause": "Cascading Failure \u2014 Database Down \u2192 Services Timing Out",
+    "confidence": 78.0,
+    "why": "Database failure triggered timeouts in APP, DB, API containers",
+    "fix_steps": [
+      "Check if database container is running (docker ps -a)",
+      "Inspect DB logs (docker logs <db_container>)",
+      "Ensure DB port is accessible and not blocked",
+      "Add retry logic in application for DB connections",
+      "Use depends_on with health checks in docker-compose"
+    ],
+    "affected_containers": [
+      "db",
+      "api",
+      "app"
+    ],
+    "evidence": [
+      {
+        "container": "app",
+        "log": "2024-06-15 14:30:13,000 [ERROR] TimeoutError: Knex: Timeout acquiring a connection. The pool is probably full. Are you m",
+        "matched_signals": [
+          "timeout"
+        ]
+      },
+      {
+        "container": "app",
+        "log": "2024-06-15 14:30:46,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+        "matched_signals": [
+          "timeout"
+        ]
+      },
+      {
+        "container": "app",
+        "log": "2024-06-15 14:31:09,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+        "matched_signals": [
+          "timeout"
+        ]
+      }
+    ]
+  },
+  "anomalies": [
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:30:13,000 [ERROR] TimeoutError: Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? (60000ms)",
+      "error_type": "timeout",
+      "confidence": 95.5
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:30:36,000 [ERROR] com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure",
+      "error_type": "timeout",
+      "confidence": 45.8
+    },
+    {
+      "container": "app",
+      "original_log": "The last packet sent successfully to the server was 30000 milliseconds ago.",
+      "error_type": "timeout",
+      "confidence": 94.1
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:30:46,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "error_type": "timeout",
+      "confidence": 97.5
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:31:09,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "error_type": "timeout",
+      "confidence": 97.5
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:32:58,000 [ERROR] com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure",
+      "error_type": "timeout",
+      "confidence": 45.8
+    },
+    {
+      "container": "app",
+      "original_log": "The last packet sent successfully to the server was 60000 milliseconds ago.",
+      "error_type": "timeout",
+      "confidence": 94.1
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:33:25,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "error_type": "timeout",
+      "confidence": 97.5
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:34:22,000 [ERROR] fatal: Caught signal 11 (Segmentation fault). Please inspect crash dump at /tmp/crash-9246.dmp",
+      "error_type": "crash",
+      "confidence": 87.7
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:34:28,000 [ERROR] Error: Cannot find module '../models/User'",
+      "error_type": "permission",
+      "confidence": 59.7
+    },
+    {
+      "container": "app",
+      "original_log": "2024-06-15 14:35:54,000 [ERROR] fatal: Caught signal 11 (Segmentation fault). Please inspect crash dump at /tmp/crash-8121.dmp",
+      "error_type": "crash",
+      "confidence": 87.7
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:30:00,000 [ERROR] grpc: addrConn.createTransport failed to connect to {{172.18.0.3:9092, <nil>}}. Err: connection refused.",
+      "error_type": "dependency",
+      "confidence": 97.2
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:31:03,000 [ERROR] ServiceUnavailableError: Downstream service 'auth-service' at 172.18.0.8:5672 is not responding",
+      "error_type": "dependency",
+      "confidence": 96.7
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:31:21,000 [ERROR] ServiceUnavailableError: Downstream service 'user-service' at 172.19.0.5:3306 is not responding",
+      "error_type": "dependency",
+      "confidence": 96.7
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:32:21,000 [ERROR] upstream connect error or disconnect/reset before headers. reset reason: connection failure \u2014 user-service:5672",
+      "error_type": "dependency",
+      "confidence": 96.3
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:34:16,000 [ERROR] ServiceUnavailableError: Downstream service 'mailer' at 172.17.0.7:9092 is not responding",
+      "error_type": "dependency",
+      "confidence": 96.7
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:34:21,000 [INFO] checkpoint complete: wrote 159 buffers (1.0%)",
+      "error_type": "timeout",
+      "confidence": 73.5
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:34:52,000 [ERROR] AMQP connection error on 172.17.0.2:5672: connection refused (reptured)",
+      "error_type": "dependency",
+      "confidence": 97.1
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:36:04,000 [ERROR] [WARN] Request to http://internal-svc/api/v3/endpoint timed out after 10000ms \u2014 retry 1/13",
+      "error_type": "timeout",
+      "confidence": 92.0
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:36:57,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "error_type": "timeout",
+      "confidence": 97.5
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:36:59,000 [ERROR] DEADLINE_EXCEEDED: Waited 60s for gRPC response from 'payment-api'",
+      "error_type": "timeout",
+      "confidence": 83.0
+    },
+    {
+      "container": "db",
+      "original_log": "2024-06-15 14:37:48,000 [ERROR] ERROR: health check failed for container 'scheduler_1': timeout after 30s",
+      "error_type": "timeout",
+      "confidence": 96.2
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:30:00,000 [ERROR] ReadTimeoutError: HTTPSConnectionPool(host='smtp.mailgun.org', port=5672): Read timed out. (read timeout=60)",
+      "error_type": "timeout",
+      "confidence": 95.9
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:30:33,000 [ERROR] Gateway Timeout: upstream 'auth-service' failed to respond within 60s",
+      "error_type": "timeout",
+      "confidence": 97.0
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:31:52,000 [ERROR] TimeoutError: Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? (10000ms)",
+      "error_type": "timeout",
+      "confidence": 95.5
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:32:52,000 [ERROR] net/http: request canceled (Client.Timeout exceeded while awaiting headers) [http://internal-svc/api/v2/endpoint]",
+      "error_type": "timeout",
+      "confidence": 91.9
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:33:20,000 [ERROR] net/http: request canceled (Client.Timeout exceeded while awaiting headers) [http://internal-svc/api/v2/endpoint]",
+      "error_type": "timeout",
+      "confidence": 91.9
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:33:28,000 [ERROR] redis.exceptions.ConnectionError: Error 107 connecting to 172.17.0.10:6379. Connection refused.",
+      "error_type": "dependency",
+      "confidence": 96.7
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:34:47,000 [ERROR] pymongo.errors.ServerSelectionTimeoutError: 172.18.0.7:9092: [Errno 111] Connection refused, Timeout: 30s",
+      "error_type": "dependency",
+      "confidence": 96.3
+    },
+    {
+      "container": "api",
+      "original_log": "2024-06-15 14:36:41,000 [ERROR] ServiceUnavailableError: Downstream service 'mailer' at 172.19.0.10:27017 is not responding",
+      "error_type": "dependency",
+      "confidence": 96.7
+    }
+  ]
+}

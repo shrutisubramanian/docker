@@ -1,3 +1,53 @@
-Application started successfully 
-Database connection established 
-Docker build failed due to missing dependency 
+2024-06-15 14:30:00,000 [INFO] Cache hit ratio: 78% — serving from Redis
+2024-06-15 14:30:07,000 [INFO] Cache hit ratio: 94% — serving from Redis
+2024-06-15 14:30:13,000 [ERROR] TimeoutError: Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call? (60000ms)
+2024-06-15 14:30:18,000 [INFO] Scheduled job 'cleanup_sessions' completed in 128ms
+2024-06-15 14:30:20,000 [INFO] User authentication successful for user_id=4262
+2024-06-15 14:30:24,000 [INFO] POST /api/v1/orders 201 Created (112ms)
+2024-06-15 14:30:36,000 [ERROR] com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+	The last packet sent successfully to the server was 30000 milliseconds ago.
+2024-06-15 14:30:46,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-06-15 14:30:52,000 [INFO] POST /api/v1/orders 201 Created (112ms)
+2024-06-15 14:31:09,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-06-15 14:31:25,000 [INFO] POST /api/v1/orders 201 Created (112ms)
+2024-06-15 14:31:48,000 [INFO] Cache hit ratio: 97% — serving from Redis
+2024-06-15 14:32:10,000 [INFO] Scheduled job 'cleanup_sessions' completed in 332ms
+2024-06-15 14:32:30,000 [INFO] User authentication successful for user_id=2771
+2024-06-15 14:32:58,000 [ERROR] com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+	The last packet sent successfully to the server was 60000 milliseconds ago.
+2024-06-15 14:33:03,000 [INFO] POST /api/v1/orders 201 Created (112ms)
+2024-06-15 14:33:25,000 [ERROR] context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-06-15 14:33:46,000 [INFO] User authentication successful for user_id=5250
+2024-06-15 14:34:05,000 [INFO] User authentication successful for user_id=4643
+2024-06-15 14:34:22,000 [ERROR] fatal: Caught signal 11 (Segmentation fault). Please inspect crash dump at /tmp/crash-9246.dmp
+2024-06-15 14:34:28,000 [ERROR] Error: Cannot find module '../models/User'
+Require stack:
+- /app/app.js.js
+- /app/index.js
+2024-06-15 14:34:37,000 [INFO] Scheduled job 'cleanup_sessions' completed in 182ms
+2024-06-15 14:34:45,000 [INFO] User authentication successful for user_id=7889
+2024-06-15 14:35:00,000 [INFO] Cache hit ratio: 97% — serving from Redis
+2024-06-15 14:35:07,000 [INFO] Cache hit ratio: 79% — serving from Redis
+2024-06-15 14:35:18,000 [INFO] Scheduled job 'cleanup_sessions' completed in 250ms
+2024-06-15 14:35:29,000 [INFO] POST /api/v1/orders 201 Created (112ms)
+2024-06-15 14:35:54,000 [ERROR] fatal: Caught signal 11 (Segmentation fault). Please inspect crash dump at /tmp/crash-8121.dmp
+2024-06-15 14:36:20,000 [INFO] GET /api/v1/users 200 OK (34ms)
+2024-06-15 14:36:36,000 [INFO] Cache hit ratio: 71% — serving from Redis
+2024-06-15 14:36:47,000 [INFO] Scheduled job 'cleanup_sessions' completed in 356ms
+2024-06-15 14:37:16,000 [INFO] User authentication successful for user_id=6113
+2024-06-15 14:37:43,000 [INFO] GET /api/v1/users 200 OK (34ms)
+2024-06-15 14:38:05,000 [INFO] POST /api/v1/orders 201 Created (112ms)
+2024-06-15 14:38:35,000 [INFO] Cache hit ratio: 77% — serving from Redis
+2024-06-15 14:38:36,000 [INFO] Scheduled job 'cleanup_sessions' completed in 449ms
+2024-06-15 14:38:57,000 [INFO] User authentication successful for user_id=9761
+2024-06-15 14:39:18,000 [INFO] GET /api/v1/users 200 OK (34ms)
+2024-06-15 14:39:27,000 [INFO] Cache hit ratio: 76% — serving from Redis
+2024-06-15 14:39:49,000 [INFO] GET /api/v1/users 200 OK (34ms)
+2024-06-15 14:40:18,000 [INFO] GET /api/v1/users 200 OK (34ms)
+2024-06-15 14:40:25,000 [INFO] Scheduled job 'cleanup_sessions' completed in 361ms
+2024-06-15 14:40:39,000 [INFO] User authentication successful for user_id=3627
+2024-06-15 14:40:55,000 [INFO] User authentication successful for user_id=4842
+2024-06-15 14:41:11,000 [INFO] POST /api/v1/orders 201 Created (112ms)
+2024-06-15 14:41:19,000 [INFO] Cache hit ratio: 78% — serving from Redis
+2024-06-15 14:41:29,000 [INFO] User authentication successful for user_id=6123
+2024-06-15 14:41:34,000 [INFO] POST /api/v1/orders 201 Created (112ms)
