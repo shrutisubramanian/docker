@@ -1,162 +1,320 @@
-import React, { useState, useEffect } from 'react';
-import ContainerTable from '../components/ContainerTable';
-import FailureControls from '../components/FailureControls';
-import HealingTimeline from '../components/HealingTimeline';
-import IncidentTable from '../components/IncidentTable';
-import { getContainers, getIncidents, simulateFailure, triggerPipeline } from '../services/api';
-import { Activity, Shield, RefreshCcw, AlertOctagon } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { 
+  getContainers, 
+  triggerPipeline 
+} from '../api';
+import { 
+  Zap, 
+  Cpu, 
+  MemoryStick as Memory, 
+  HardDrive, 
+  Activity,
+  ArrowUpRight,
+  TrendingUp,
+  Search,
+  ExternalLink,
+  CheckCircle2,
+  AlertCircle,
+  Terminal as TerminalIcon,
+  Database
+} from 'lucide-react';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
+import { useSimulation } from '../context/SimulationContext';
+import Terminal from '../components/Terminal';
 
-const Dashboard = () => {
-  const [containers, setContainers] = useState([]);
-  const [selectedContainer, setSelectedContainer] = useState('');
-  const [incidents, setIncidents] = useState([]);
-  const [pipelineData, setPipelineData] = useState(null);
-  const [loadingInitial, setLoadingInitial] = useState(true);
-  const [isPipelineRunning, setIsPipelineRunning] = useState(false);
-  const [serverError, setServerError] = useState(null);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
-  const fetchData = async () => {
-    try {
-      const containersData = await getContainers();
-      const incidentsData = await getIncidents();
+const ChartCard = ({ title, data, color }) => {
+  const { theme } = useSimulation();
+  const isDark = theme === 'dark';
 
-      // Ensure we handle data structures correctly if they come back as objects
-      setContainers(Array.isArray(containersData) ? containersData : containersData.containers || []);
-      setIncidents(incidentsData);
-      setServerError(null);
-    } catch (error) {
-      setServerError(error.message);
-    } finally {
-      setLoadingInitial(false);
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: isDark ? '#121214' : '#ffffff',
+        titleColor: color,
+        bodyColor: isDark ? '#fff' : '#0f172a',
+        borderColor: isDark ? '#1f1f22' : '#e2e8f0',
+        borderWidth: 1,
+      }
+    },
+    scales: {
+      x: { display: false },
+      y: { 
+        display: false,
+        beginAtZero: true,
+      }
     }
   };
 
-  useEffect(() => {
-    fetchData();
-    const interval = setInterval(fetchData, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Automatic selection of the first container if none is selected
-  useEffect(() => {
-    if (containers.length > 0 && !selectedContainer) {
-      setSelectedContainer(containers[0].name);
-    }
-  }, [containers, selectedContainer]);
-
-  const handleSimulateFailure = async (type) => {
-    try {
-      if (!selectedContainer) throw new Error("Please select a target container first.");
-      setServerError(null);
-      await simulateFailure(type, selectedContainer);
-      await fetchData();
-    } catch (error) {
-      setServerError(error.message);
-    }
-  };
-
-  const handleTriggerPipeline = async () => {
-    setIsPipelineRunning(true);
-    try {
-      setServerError(null);
-      if (!selectedContainer) throw new Error("Please select a target container first.");
-
-      const result = await triggerPipeline(selectedContainer);
-      setPipelineData(result);
-    } catch (error) {
-      setServerError(error.message);
-    } finally {
-      setIsPipelineRunning(false);
-      await fetchData();
-    }
+  const chartData = {
+    labels: Array(data.length).fill(''),
+    datasets: [
+      {
+        data: data,
+        borderColor: color,
+        borderWidth: 2,
+        tension: 0.4,
+        fill: true,
+        backgroundColor: (context) => {
+          const ctx = context.chart.ctx;
+          const gradient = ctx.createLinearGradient(0, 0, 0, 100);
+          gradient.addColorStop(0, `${color}33`);
+          gradient.addColorStop(1, `${color}00`);
+          return gradient;
+        },
+      },
+    ],
   };
 
   return (
-    <div className="min-h-screen bg-dark-bg p-6 text-slate-200 font-sans selection:bg-indigo-500/30">
-      <div className="max-w-7xl mx-auto">
-        <header className="flex items-center justify-between mb-8 pb-4 border-b border-dark-border">
-          <div className="flex items-center space-x-3">
-            <div className="p-2 bg-indigo-500/20 rounded-xl border border-indigo-500/30">
-              <Shield className="w-6 h-6 text-indigo-400" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight text-white drop-shadow-sm">Self-Healing Framework</h1>
-              <p className="text-sm text-slate-400">AI-powered automated container recovery</p>
-            </div>
+    <div className="cyber-panel h-48 relative overflow-hidden group">
+      <div className="scanline"></div>
+      <div className="flex justify-between items-start mb-4">
+        <div>
+          <span className="text-[11px] text-text-dim font-mono flex items-center gap-1 uppercase tracking-wider">
+            <Activity size={12} className="text-neon" />
+            {title}
+          </span>
+          <h3 className="text-xl font-bold font-mono text-text-main mt-1 italic tracking-tighter">TELEMETRY_STREAM</h3>
+        </div>
+        <div className="flex flex-col items-end">
+          <span className="text-neon text-xs font-bold flex items-center gap-1 bg-neon/10 px-2 py-0.5 rounded-sm">
+            <TrendingUp size={12} />
+            +4.2%
+          </span>
+          <span className="text-[11px] text-text-dim font-mono mt-1">REAL-TIME</span>
+        </div>
+      </div>
+      <div className="h-24">
+        <Line data={chartData} options={options} />
+      </div>
+    </div>
+  );
+};
+
+const Dashboard = () => {
+  const { 
+    containers, 
+    telemetryHistory, 
+    startHealing, 
+    setActiveTab, 
+    addLog,
+    logs
+  } = useSimulation();
+
+  const handleExportLogs = () => {
+    const logText = logs.map(l => `[${l.time}] [${l.type.toUpperCase()}] ${l.text}`).join('\n');
+    const blob = new Blob([logText], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `synthetic_sentinel_logs_${new Date().toISOString().slice(0, 10)}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    addLog('SYSTEM_LOGS_EXPORTED // ARCHIVE_GENERATED', 'success');
+  };
+
+  const handleFix = async (name) => {
+    try {
+      // Step 1: Immediate Redirect
+      startHealing(name);
+      
+      // Step 2: Async Backend Load
+      const response = await triggerPipeline(name);
+      
+      // Step 3: Update with Real Data
+      startHealing(name, response.incidents?.[0]);
+    } catch (error) {
+      console.error('Error triggering fix:', error);
+      addLog(`HEAL_FAILED // ${error.message}`, 'error');
+    }
+  };
+
+  const cn = (...inputs) => inputs.filter(Boolean).join(' ');
+
+  return (
+    <div className="flex flex-col gap-8 transition-colors duration-300">
+      <div className="flex justify-between items-center px-2">
+        <div>
+          <h2 className="text-3xl font-bold tracking-tighter text-text-main uppercase">Dashboard_Cmd_Root</h2>
+          <p className="text-text-dim font-mono text-xs mt-1 uppercase tracking-wider italic opacity-70">
+            Real-time heuristics engine active // T-minus 00:0{Math.floor(Math.random()*5)} to next sync
+          </p>
+        </div>
+        <div className="flex gap-4">
+           <button 
+             onClick={handleExportLogs}
+             className="px-5 py-2.5 bg-panel-bg border border-border-subtle text-text-main text-xs font-bold flex items-center gap-2 hover:border-neon/50 transition-colors uppercase tracking-widest"
+           >
+            EXPORT LOGS
+           </button>
+           <button 
+             onClick={() => setActiveTab('chaos')}
+             className="px-5 py-2.5 bg-neon text-black text-xs font-bold flex items-center gap-2 hover:bg-neon/80 transition-all uppercase tracking-widest shadow-neon active:scale-95"
+           >
+            INJECT CHAOS
+           </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ChartCard 
+          title="CPU_LOAD_TELEMETRY" 
+          data={telemetryHistory.cpu.length > 0 ? telemetryHistory.cpu : [0]} 
+          color="#00ff66" 
+        />
+        <ChartCard 
+          title="RAM_MEMORY_HEAP" 
+          data={telemetryHistory.memory.length > 0 ? telemetryHistory.memory : [0]} 
+          color="#00e5ff" 
+        />
+      </div>
+
+      <div className="cyber-panel">
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center gap-3">
+             <h3 className="font-bold uppercase tracking-widest text-sm text-text-dim">Active Container Inventory</h3>
+             <div className="flex gap-2">
+                <span className="flex items-center gap-1 text-[11px] text-neon bg-neon/5 px-2.5 py-0.5 rounded-full border border-neon/20 font-bold">
+                   <div className="w-1.5 h-1.5 rounded-full bg-neon animate-pulse"></div>
+                   HEALTHY
+                </span>
+                <span className="flex items-center gap-1 text-[11px] text-yellow-500 bg-yellow-500/5 px-2.5 py-0.5 rounded-full border border-yellow-500/20 font-bold">
+                   <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                   SCALING
+                </span>
+                <span className="flex items-center gap-1 text-[11px] text-chaos bg-chaos/5 px-2.5 py-0.5 rounded-full border border-chaos/20 font-bold">
+                   <div className="w-1.5 h-1.5 rounded-full bg-chaos animate-pulse"></div>
+                   FAILING
+                </span>
+             </div>
           </div>
-
-          <button
-            onClick={fetchData}
-            className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-colors flex items-center justify-center space-x-2"
-            title="Refresh Data"
-          >
-            <RefreshCcw className="w-5 h-5 flex-shrink-0" />
-          </button>
-        </header>
-
-        {serverError && (
-          <div className="mb-6 p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl flex items-center space-x-3 text-rose-400">
-            <AlertOctagon className="w-6 h-6 flex-shrink-0" />
-            <div>
-              <h3 className="font-semibold text-rose-300">Connection Error</h3>
-              <p className="text-sm">{serverError}</p>
-            </div>
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="col-span-1 lg:col-span-2 flex flex-col gap-6">
-            {/* Table now displays Disk and Network within its existing structure */}
-            <ContainerTable
-              containers={containers}
-              loading={loadingInitial}
-              onSelect={setSelectedContainer}
-              selectedId={selectedContainer}
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-text-dim" size={16} />
+            <input 
+              type="text" 
+              placeholder="Filter assets..."
+              className="pl-10 pr-4 py-2 bg-bg-primary border border-border-subtle rounded text-xs text-text-main focus:outline-none focus:border-neon/30 w-64 transition-all"
             />
-
-            {/* Added 3 new attack types to FailureControls via handleSimulateFailure */}
-            <FailureControls
-              onSimulate={handleSimulateFailure}
-              containers={containers}
-              selectedContainer={selectedContainer}
-              onSelectContainer={setSelectedContainer}
-            />
-
-            <IncidentTable incidents={incidents} loading={loadingInitial} />
           </div>
+        </div>
 
-          <div className="col-span-1 flex flex-col gap-6">
-            <div className="bg-dark-panel rounded-xl border border-dark-border p-6 shadow-lg relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="overflow-x-auto">
+          <table className="w-full text-left font-mono text-xs">
+            <thead>
+              <tr className="text-text-dim uppercase border-b border-border-subtle bg-bg-primary/30">
+                <th className="py-4 px-4 font-bold">Container_ID</th>
+                <th className="py-4 px-4 font-bold">Image_Hash</th>
+                <th className="py-4 px-4 font-bold">Status</th>
+                <th className="py-4 px-4 font-bold">Health</th>
+                <th className="py-4 px-4 font-bold">Resource_Footprint</th>
+                <th className="py-4 px-4 font-bold text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border-subtle">
+              {containers.length === 0 ? (
+                <tr>
+                   <td colSpan="6" className="py-8 text-center text-text-dim italic uppercase">System_Scanning...</td>
+                </tr>
+              ) : containers.map((c) => (
+                <tr key={c.name} className="group hover:bg-neon/5 transition-colors">
+                  <td className="py-4 px-4">
+                    <span className="text-neon font-bold">{c.name}</span>
+                  </td>
+                  <td className="py-4 px-4 text-text-dim opacity-60 uppercase">sha256:{c.name.split('').reverse().join('').substring(0, 8)}...</td>
+                  <td className="py-4 px-4">
+                    <span className="text-text-main font-bold bg-panel-bg border border-border-subtle px-2 py-0.5 rounded shadow-sm uppercase tracking-tighter">Running</span>
+                  </td>
+                  <td className="py-4 px-4">
+                    {parseFloat(c.cpu) > 80 ? (
+                      <span className="flex items-center gap-1.5 text-chaos font-bold uppercase tracking-tighter">
+                        <AlertCircle size={14} /> Critical
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-1.5 text-neon font-bold uppercase tracking-tighter">
+                        <CheckCircle2 size={14} /> Healthy
+                      </span>
+                    )}
+                  </td>
+                  <td className="py-4 px-4">
+                    <div className="flex items-center gap-3 w-48">
+                      <div className="flex-1 h-1 bg-border-subtle rounded-full overflow-hidden">
+                        <div 
+                          className={cn(
+                            "h-full rounded-full transition-all duration-1000",
+                            parseFloat(c.cpu) > 80 ? "bg-chaos" : "bg-neon"
+                          )}
+                          style={{ width: c.cpu }}
+                        ></div>
+                      </div>
+                      <span className="text-text-main font-bold min-w-[40px] text-right">{c.memory}</span>
+                    </div>
+                  </td>
+                  <td className="py-4 px-4 text-right">
+                    <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button 
+                        onClick={() => handleFix(c.name)}
+                        className="px-4 py-1.5 bg-neon/10 border border-neon/30 text-neon hover:bg-neon hover:text-black transition-all rounded-sm text-[10px] font-bold uppercase tracking-widest"
+                      >
+                        HEAL
+                      </button>
+                      <button className="p-1 text-text-dim hover:text-text-main transition-colors">
+                        <ExternalLink size={16} />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-4 pt-4 border-t border-border-subtle flex justify-center">
+            <span className="text-[11px] text-text-dim font-bold animate-pulse-slow uppercase tracking-[0.3em] font-mono">
+              End Of Stream — View Extended Logs (14,204 More Entries)
+            </span>
+        </div>
+      </div>
 
-              <h2 className="flex items-center space-x-2 text-xl font-semibold mb-4 text-slate-100 relative z-10">
-                <Activity className="w-5 h-5 text-indigo-400" />
-                <span>Healing Pipeline</span>
-              </h2>
-              <p className="text-slate-400 text-sm mb-6 relative z-10">
-                Trigger the AI agent to analyze metrics, diagnose issues, and automatically restart unhealthy containers.
-              </p>
-
-              <button
-                onClick={handleTriggerPipeline}
-                disabled={isPipelineRunning || !!serverError}
-                className="w-full py-3.5 px-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium tracking-wide shadow-lg shadow-indigo-500/20 transition-all active:scale-[0.98] disabled:opacity-70 disabled:active:scale-100 disabled:cursor-not-allowed flex justify-center items-center relative z-10"
-              >
-                {isPipelineRunning ? (
-                  <>
-                    <div className="animate-spin h-5 w-5 border-2 border-white/30 border-t-white rounded-full mr-3"></div>
-                    Running Pipeline...
-                  </>
-                ) : (
-                  'Run Self-Healing Pipeline'
-                )}
-              </button>
+      <div className="grid grid-cols-1 gap-6 pb-8">
+        <div className="cyber-panel flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <TerminalIcon size={18} className="text-neon" />
+              <h3 className="font-bold tracking-widest text-sm uppercase text-text-dim">Live Sentry Logs</h3>
             </div>
-
-            <div className="flex-1">
-              <HealingTimeline pipelineData={pipelineData} />
+            <div className="flex gap-1">
+               <div className="w-2.5 h-2.5 rounded-full bg-chaos/40"></div>
+               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
+               <div className="w-2.5 h-2.5 rounded-full bg-neon/40"></div>
             </div>
           </div>
+          <Terminal limit={10} className="h-80 text-xs" />
         </div>
       </div>
     </div>

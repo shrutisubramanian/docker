@@ -14,17 +14,18 @@ def process_reasoning_alert(alert: ReasoningInput) -> IncidentReport:
     # 1. Map predicted label to action
     action = map_issue_to_action(alert.error_type, alert.suggested_fix)
     
-    # 2. Execute Docker fix
-    success = execute_recovery_action(alert.container, action)
+    # 2. Execute Docker fix (Upgraded to handle detailed command feedback)
+    success, detailed_fix = execute_recovery_action(alert.container, action)
     
-    # 3. Build DYNAMIC report (No more hardcoded OOM messages)
+    # 3. Build DYNAMIC report (Now includes the specific command/action taken)
     report = IncidentReport(
         container=alert.container,
-        error_type=alert.error_type,    # Predicted by SVM
+        error_type=alert.error_type,
         suggested_fix=alert.suggested_fix, 
         action_taken=action,
         resolution_status="Success" if success else "Failed",
-        timestamp=datetime.now().isoformat()
+        timestamp=datetime.now().isoformat(),
+        detailed_fix=detailed_fix  # NEW: Added for transparency
     )
     
     # Log to JSON for history table

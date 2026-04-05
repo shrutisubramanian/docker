@@ -12,22 +12,9 @@ import os
 # Add project root to path so imports work
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Mock LogPipeline since the original module is missing
-class LogPipeline:
-    def __init__(self, container_name):
-        self.container_name = container_name
-    def start_collecting(self, duration=30):
-        print(f"[MOCK] Collecting logs for {duration}s...")
-    def print_summary(self):
-        print("[MOCK] Log summary completed.")
-    def get_all_logs(self):
-        return ["Mock log line 1", "Mock log line 2"]
-    def get_all_errors(self):
-        return ["Mock error log"]
-
-# from log_pipeline import LogPipeline  # Stale: LogPipeline is missing
-from ai_engine.analyzer import prediction as analyze_logs  # Placeholder
-from ai_engine.anomaly_detector import run_anomaly_detection, load_svm as load_model
+from log_pipeline import LogPipeline
+from ai_engine.analyzer import analyze_logs, print_analysis, load_model
+from ai_engine.anomaly_detector import run_anomaly_detection
 
 
 def run_full_pipeline(container_name: str, duration: int = 30, errors_only: bool = False):
@@ -62,17 +49,15 @@ def run_full_pipeline(container_name: str, duration: int = 30, errors_only: bool
 
     # ── Step 3: AI analysis (Shruti's module) ────────────────────────────────
     print("\n[STEP 3] Running AI analysis...")
-    svm_model, svm_vectorizer = load_model()
-    # Mocking the classification since analyze_logs is missing
-    labels = svm_model.predict(svm_vectorizer.transform(logs_to_analyse))
-    results = [{"log": log, "label": label} for log, label in zip(logs_to_analyse, labels)]
+    model, vectorizer = load_model()
+    results = analyze_logs(logs_to_analyse, model=model, vectorizer=vectorizer)
 
     # ── Step 4: Print results ────────────────────────────────────────────────
-    print("\n[STEP 4] AI Analysis Results:")
-    for res in results:
-        print(f"Log: {res['log']} | Predicted: {res['label']}")
+    print_analysis(results)
 
-    # ── Step 5: Return results ──
+    # ── Step 5: Return results for Member 4 (Subhashini - Action Executor) ──
+    # Member 4 can call this function and use the returned list
+    # Each result has: container, severity, error_type, confidence, suggested_fix
     return results
 
 

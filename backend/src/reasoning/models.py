@@ -31,3 +31,6 @@ class IncidentReport(BaseModel):
     # NEW: Added to ensure the dashboard timeline shows unique AI data
     root_cause: Optional[str] = None
     confidence: Optional[str] = None
+    
+    # NEW: Specific command or action taken for "Hot Fixes"
+    detailed_fix: Optional[str] = None

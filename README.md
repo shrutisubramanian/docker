@@ -62,39 +62,35 @@ AI-Automation/
 
 ### 2. Installation
 
+#### 🍎 macOS / 🐧 Linux
 ```bash
-# Clone the repository
-git clone
-cd ai-container-healing
-
 # Setup Backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r backend/requirements.txt
 
 # Setup Frontend
-cd frontend
-npm install
-cd ..
+cd frontend && npm install
+```
+
+#### 🪟 Windows (Powershell)
+```powershell
+# Setup Backend
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r backend\requirements.txt
+
+# Setup Frontend
+cd frontend; npm install
 ```
 
 ### 3. Running the Framework
 
-**Terminal 1: Start Backend**
-```bash
-./scripts/start_server.sh
-```
-
-**Terminal 2: Start Frontend**
-```bash
-cd frontend
-npm run dev
-```
-
-**Terminal 3: Start Target Containers**
-```bash
-./scripts/start_containers.sh
-```
+| Service | macOS / Linux Command | Windows (Powershell) Command |
+| :--- | :--- | :--- |
+| **Backend API** | `./scripts/start_server.sh` | `python -m uvicorn backend.src.api:app --host 0.0.0.0 --port 8000 --reload` |
+| **Frontend UI** | `cd frontend && npm run dev` | `cd frontend; npm run dev -- --port 5174 --host 0.0.0.0` |
+| **Target Containers** | `./scripts/start_containers.sh` | `docker compose -f containers/docker-compose.yml up -d` |
 
 ---
 
