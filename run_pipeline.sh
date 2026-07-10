@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "==========================================="
+echo "   AI Self-Healing Container Framework     "
+echo "==========================================="
+echo ""
+echo "Follow these steps in separate terminal windows to run the pipeline:"
+echo "1. Start server       : ./scripts/start_server.sh"
+echo "2. Start containers   : ./scripts/start_containers.sh"
+echo "3. Simulate failure   : ./scripts/simulate_failure.sh"
+echo "4. Trigger pipeline   : curl -X POST 'http://127.0.0.1:8000/api/v1/trigger_pipeline?container_name=backend'"
+echo "5. View incidents     : curl http://127.0.0.1:8000/api/v1/incidents"
+echo ""

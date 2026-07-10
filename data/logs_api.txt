@@ -1,0 +1,3 @@
+Permission denied accessing configuration file 
+Service timeout after 30 seconds 
+Application running normally 

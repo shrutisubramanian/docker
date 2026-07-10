@@ -1,0 +1,602 @@
+[
+    {
+        "timestamp": "2026-04-05T21:29:29.404162",
+        "container": "mongo",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T21:23:33.258541",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T21:23:02.080399",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T20:28:09.573973",
+        "container": "mongo",
+        "error_type": "RESTART_CONTAINER",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T19:18:36.585010",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T18:59:54.245232",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T18:47:07.117723",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T18:46:11.790967",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T18:06:01.685568",
+        "container": "backend",
+        "error_type": "RESTART_CONTAINER",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T18:03:15.630466",
+        "container": "backend",
+        "error_type": "RESTART_CONTAINER",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T18:00:14.922373",
+        "container": "backend",
+        "error_type": "RESTART_CONTAINER",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T17:46:57.094242",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T17:45:10.598689",
+        "container": "mongo",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T17:43:20.139447",
+        "container": "mongo",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T16:46:43.768720",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-05T16:39:15.392251",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-03T23:49:42.999565",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-03T23:49:12.769681",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-03T23:48:31.216257",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-03T23:40:36.544486",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null,
+        "detailed_fix": "Cold Fix: Performed a Standard Container Restart to recover from crash."
+    },
+    {
+        "timestamp": "2026-04-03T23:23:30.302725",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "crash",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T16:14:27.382956",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T16:14:23.697313",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T16:13:29.873208",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T16:10:58.514843",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T15:51:35.559765",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "INCREASE_TIMEOUT",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T15:41:55.428829",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T15:37:46.973811",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-17T12:44:15.487444",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T16:51:15.458304",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:44:58.356468",
+        "container": "frontend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:32:58.441891",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:18:01.104258",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:15:49.213725",
+        "container": "backend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "INCREASE_TIMEOUT",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:15:12.857318",
+        "container": "frontend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "REBUILD_IMAGE",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:14:59.765134",
+        "container": "frontend",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "APPLY_CPU_QUOTA",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:14:10.303856",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-16T00:13:46.263812",
+        "container": "mongo",
+        "error_type": "AI_AUTONOMOUS_FIX",
+        "suggested_fix": "RESTART_CONTAINER",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success",
+        "root_cause": null,
+        "confidence": null
+    },
+    {
+        "timestamp": "2026-03-15 23:32:44",
+        "container": "mongo",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:32:25",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:31:50",
+        "container": "frontend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:31:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:30:56",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:30:17",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:17:55",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:17:31",
+        "container": "backend",
+        "error_type": "dependency",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:17:00",
+        "container": "backend",
+        "error_type": "dependency",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:16:32",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "RESTART_CONTAINER",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:15:20",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:20",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:20",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:19",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 23:00:18",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 22:59:54",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 22:59:20",
+        "container": "backend",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15 22:55:42",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 22:55:01",
+        "container": "backend",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 22:50:16",
+        "container": "mongo",
+        "error_type": "timeout",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Standard Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15 22:49:36",
+        "container": "mongo",
+        "error_type": "crash",
+        "suggested_fix": "Review full log output and escalate if issue persists",
+        "action_taken": "Reinitialize Container",
+        "resolution_status": "Failed"
+    },
+    {
+        "timestamp": "2026-03-15T16:59:19.693019",
+        "container": "frontend",
+        "error_type": "Memory Out Of Bounds (OOM)",
+        "suggested_fix": "Clear cache, increase memory allocation, and restart",
+        "action_taken": "Flush Memory & Restart",
+        "resolution_status": "Success"
+    },
+    {
+        "timestamp": "2026-03-15T16:59:51.688761",
+        "container": "frontend",
+        "error_type": "Memory Out Of Bounds (OOM)",
+        "suggested_fix": "Clear cache, increase memory allocation, and restart",
+        "action_taken": "Flush Memory & Restart",
+        "resolution_status": "Success"
+    }
+]

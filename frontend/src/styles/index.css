@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon: var(--neon-green);
+  --color-bg-primary: var(--bg-main);
+  --color-panel-bg: var(--panel-bg);
+  --color-border-subtle: var(--border-main);
+  --color-text-main: var(--text-primary);
+  --color-text-dim: var(--text-secondary);
+  --color-chaos: var(--chaos-red);
+  
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-mono: "Inconsolata", "monospace";
+  
+  --shadow-neon: 0 0 10px rgba(0, 255, 102, 0.4), 0 0 20px rgba(0, 255, 102, 0.2);
+  --shadow-neon-red: 0 0 15px rgba(255, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.3);
+}
+
+:root {
+  --neon-green: #059669;
+  --bg-main: #f1f5f9;
+  --panel-bg: #ffffff;
+  --border-main: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --chaos-red: #dc2626;
+  --scrollbar-bg: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+.dark {
+  --neon-green: #00ff66;
+  --bg-main: #0a0a0c;
+  --panel-bg: #121214;
+  --border-main: #1f1f22;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --chaos-red: #ff3366;
+  --scrollbar-bg: #0a0a0c;
+  --scrollbar-thumb: #1f1f22;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+  body {
+    @apply bg-bg-primary text-text-main font-sans antialiased text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  .cyber-panel {
+    @apply bg-panel-bg border border-border-subtle rounded-lg p-6 transition-all duration-300;
+  }
+  
+  .cyber-panel:hover {
+    @apply border-neon/40 shadow-neon;
+  }
+  
+  .neon-text {
+    @apply text-neon drop-shadow-[0_0_8px_rgba(0,255,102,0.4)];
+  }
+  
+  .neon-border {
+    @apply border-neon shadow-neon;
+  }
+  
+  .btn-cyber {
+    @apply px-5 py-2.5 bg-transparent border border-neon text-neon font-bold uppercase tracking-wider rounded-sm
+           hover:bg-neon hover:text-black transition-all duration-200 active:scale-95 text-sm;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center gap-4 px-6 py-4 text-text-dim hover:text-neon hover:bg-neon/5 transition-all duration-200 border-l-2 border-transparent;
+  }
+  
+  .sidebar-item.active {
+    @apply text-neon bg-neon/10 border-l-neon;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-green);
+}
+
+/* Animations */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 255, 102, 0.1);
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}
+
+.scanline-fast {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 0, 0, 0.2);
+  animation: scanline 0.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glitch-1 {
+  0% { clip-path: inset(20% 0 30% 0); transform: translate(-5px, -5px); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(5px, 5px); }
+  40% { clip-path: inset(40% 0 50% 0); transform: translate(-5px, 5px); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(5px, -5px); }
+  80% { clip-path: inset(10% 0 70% 0); transform: translate(-5px, -5px); }
+  100% { clip-path: inset(30% 0 20% 0); transform: translate(5px, 5px); }
+}
+
+@keyframes glitch-2 {
+  0% { clip-path: inset(10% 0 80% 0); transform: translate(5px, 5px); }
+  20% { clip-path: inset(40% 0 20% 0); transform: translate(-5px, -5px); }
+  40% { clip-path: inset(70% 0 10% 0); transform: translate(5px, -5px); }
+  60% { clip-path: inset(20% 0 60% 0); transform: translate(-5px, 5px); }
+  80% { clip-path: inset(50% 0 40% 0); transform: translate(5px, 5px); }
+  100% { clip-path: inset(80% 0 30% 0); transform: translate(-5px, -5px); }
+}
+
+.animate-glitch-1 {
+  animation: glitch-1 0.2s infinite;
+}
+
+.animate-glitch-2 {
+  animation: glitch-2 0.3s infinite;
+}
+
+.drop-shadow-neon {
+  filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.8));
+}
+
+@keyframes progress-fast {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.animate-progress-fast {
+  animation: progress-fast 2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
