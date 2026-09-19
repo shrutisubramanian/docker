@@ -114,5 +114,6 @@ python3 ai_engine/train_model.py
 ```
 
 Check the `Action Prediction Report` for accuracy metrics and the class distribution of fixes.
+This was a very interesting take on the development pipeline fixes.
 
 ---
